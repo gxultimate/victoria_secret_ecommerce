@@ -4,7 +4,7 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby starter ecommerce',
+    title: "April's Store",
     author: 'Parminder Sanghera',
     description: 'A starter e-commerce site made using Gatsby.',
     siteUrl: 'https://parmsang.github.io/gatsby-starter-ecommerce/',
@@ -44,7 +44,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-nprogress`,
       options: {
-        // Setting a color is optional.
+        // Setting a color is optional. 
         color: `tomato`,
         // Disable the loading spinner.
         showSpinner: false,
@@ -54,7 +54,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'Gatsby Shop App',
+        name: 'April Shop App',
         short_name: 'Shop App',
         start_url: '/gatsby-starter-ecommerce/',
         background_color: '#ffffff',
@@ -62,7 +62,7 @@ module.exports = {
         display: 'minimal-ui',
         icons: [
           {
-            src: `/favicons/android-chrome-512x512.png`,
+            src: `/favicons/pink.png`,
             sizes: `512x512`,
             type: `image/png`,
           },
@@ -71,5 +71,6 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-remark`,
   ],
 }

@@ -1,6 +1,5 @@
 import React from 'react'
-import {Link} from 'gatsby'
-import {Segment, Container, Grid, List, Header} from 'semantic-ui-react'
+import {Container, Grid, Header, List, Segment} from 'semantic-ui-react'
 
 const twitterLink = (
   <a href="https://twitter.com/parmsang" alt="twitter link">
@@ -8,12 +7,15 @@ const twitterLink = (
   </a>
 )
 const facebookLink = (
-  <a href="https://facebook.com/" alt="facebook link">
+  <a
+    href="https://www.facebook.com/Victorias-Secret-Perfumes-Iloilo-City-110091831128511"
+    alt="facebook link"
+  >
     Facebook
   </a>
 )
 const emailLink = (
-  <a href="mailto:john@doe.com" alt="email link">
+  <a href="aprilcasiple0420@gmail.com" alt="email link">
     Email
   </a>
 )
@@ -30,46 +32,18 @@ const Footer = () => (
     <Container text>
       <Grid stackable>
         <Grid.Row>
-          <Grid.Column width={4}>
-            <Header as="h4" content="About" />
-            <List>
-              <List.Item as={Link} to="/privacy/">
-                Privacy
-              </List.Item>
-              <List.Item as={Link} to="/terms/">
-                Terms
-              </List.Item>
-            </List>
-          </Grid.Column>
-          <Grid.Column width={5}>
-            <Header as="h4" content="Services" />
-            <List>
-              <List.Item as={Link} to="/">
-                Our Products
-              </List.Item>
-            </List>
-          </Grid.Column>
+          <Grid.Column width={5}></Grid.Column>
           <Grid.Column width={7}>
-            <Header as="h4">Footer Header</Header>
-            <p>
-              Extra space for a call to action inside the footer that could help
-              re-engage users.
-            </p>
-            <List horizontal style={{display: 'flex'}}>
-              <List.Item
-                icon="twitter"
-                style={{display: 'flex'}}
-                content={twitterLink}
-              />
+            <Header as="h3">Victoria Secret's Perfume Iloilo City</Header>
+            <p>Sell's Authentic Victoria Secret Perfume</p>
+            <List
+              horizontal
+              style={{display: 'flex', justifyContent: 'center'}}
+            >
               <List.Item
                 icon="facebook"
                 style={{display: 'flex'}}
                 content={facebookLink}
-              />
-              <List.Item
-                icon="mail"
-                style={{display: 'flex'}}
-                content={emailLink}
               />
             </List>
           </Grid.Column>

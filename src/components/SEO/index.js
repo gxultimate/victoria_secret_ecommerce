@@ -84,13 +84,13 @@ function SEO({description, lang, meta, keywords, title}) {
         rel="icon"
         type="image/png"
         sizes="32x32"
-        href={withPrefix('/favicons/favicon-32x32.png')}
+        href={withPrefix('/favicons/pink.png')}
       />
       <link
         rel="icon"
         type="image/png"
         sizes="16x16"
-        href={withPrefix('/favicons/favicon-16x16.png')}
+        href={withPrefix('/favicons/pink.png')}
       />
     </Helmet>
   )

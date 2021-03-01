@@ -1,52 +1,42 @@
-import React from 'react'
+import React ,{useState}from 'react'
 import {graphql, useStaticQuery} from 'gatsby'
 import get from 'lodash/get'
 import {Image, Header} from 'semantic-ui-react'
 import ProductList from '../components/ProductList'
 import SEO from '../components/SEO'
-import logo from '../images/ill-short-dark.svg'
+import logo from '../images/logo.png'
 import Layout from '../components/Layout'
 
 const StoreIndex = ({location}) => {
   const data = useStaticQuery(graphql`
-    query IndexQuery {
-      site {
-        siteMetadata {
-          title
-        }
+  query IndexQuery {
+    site {
+      siteMetadata {
+        title
       }
-      allMoltinProduct {
-        edges {
-          node {
-            id
-            name
-            description
-            mainImageHref
-            meta {
-              display_price {
-                with_tax {
-                  amount
-                  currency
-                  formatted
-                }
-              }
-            }
-            mainImage {
-              childImageSharp {
-                sizes(maxWidth: 600) {
-                  ...GatsbyImageSharpSizes
-                }
-              }
+    }
+    allMarkdownRemark{
+      edges{
+        node{
+          frontmatter{
+            productList {
+              name
+              img
+              description
+              price
+              
             }
           }
         }
       }
     }
+  }
   `)
 
   const siteTitle = get(data, 'site.siteMetadata.title')
-  const products = get(data, 'allMoltinProduct.edges')
-  const filterProductsWithoutImages = products.filter(v => v.node.mainImageHref)
+  const products = get(data, 'allMarkdownRemark.edges')
+  const filterProductsWithoutImages = products[0].node.frontmatter.productList
+  let [indexes, setIndex] = useState([])
   return (
     <Layout location={location}>
       <SEO title={siteTitle} />
@@ -67,7 +57,7 @@ const StoreIndex = ({location}) => {
           <Image src={logo} alt="logo" />
         </Header.Content>
       </Header>
-      <ProductList products={filterProductsWithoutImages} />
+      <ProductList products={filterProductsWithoutImages} indexes= {indexes}  setIndex={setIndex}/>
     </Layout>
   )
 }
